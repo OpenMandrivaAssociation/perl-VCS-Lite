@@ -16,7 +16,6 @@ Buildrequires: perl-devel
 %endif
 Buildrequires: perl-Algorithm-Diff
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 This module provides the functions normally associated 
