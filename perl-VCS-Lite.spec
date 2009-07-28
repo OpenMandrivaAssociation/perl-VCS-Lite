@@ -1,22 +1,22 @@
-%define module	VCS-Lite
-%define name	perl-%{module}
-%define version 0.08
-%define release %mkrel 4
+%define upstream_name	 VCS-Lite
+%define upstream_version 0.08
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:	Minimal version control system
-License:	GPL or Artistic
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
+Summary:	Minimal upstream_version control system
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/I/IV/IVORW/%{module}-%{version}.tar.gz
-URL:		http://search.cpan.org/dist/%{module}
+URL:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://search.cpan.org/CPAN/authors/id/I/IV/IVORW/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 Buildrequires: perl-devel
 %endif
 Buildrequires: perl-Algorithm-Diff
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module provides the functions normally associated 
@@ -29,7 +29,7 @@ It makes use of the module Algorithm::Diff. It provides the
 facility for basic diffing, patching and merging.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -50,4 +50,3 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{perl_vendorlib}/VCS
 %{_mandir}/*/*
-
