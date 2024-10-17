@@ -8,7 +8,7 @@ Release:	4
 Summary:	Minimal upstream_version control system
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{upstream_name}
+URL:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/I/IV/IVORW/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
