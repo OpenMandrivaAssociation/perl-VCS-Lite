@@ -1,15 +1,13 @@
 %define upstream_name	 VCS-Lite
-%define upstream_version 0.12
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.12
+Release:	2
 
 Summary:	Minimal upstream_version control system
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://github.com/barbie/vcs-lite
-Source0:	https://cpan.metacpan.org/authors/id/B/BA/BARBIE/VCS-Lite-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/B/BA/BARBIE/VCS-Lite-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -27,7 +25,7 @@ It makes use of the module Algorithm::Diff. It provides the
 facility for basic diffing, patching and merging.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -56,9 +54,7 @@ make test
 
 * Tue Jul 28 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.80.0-1mdv2010.0
 + Revision: 401919
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.08-4mdv2009.0
+- rebuild using %0.12 Wed Jul 23 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.08-4mdv2009.0
 + Revision: 242148
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
